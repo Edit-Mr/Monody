@@ -1,6 +1,18 @@
+input.onButtonPressed(Button.A, function () {
+    if (music.volume() == 0) {
+        music.setVolume(255)
+    } else {
+        music.setVolume(0)
+    }
+})
+music.setTempo(48)
+music.setVolume(255)
+loops.everyInterval(200, function () {
+    basic.showIcon(IconNames.Heart)
+    basic.pause(200)
+    basic.showIcon(IconNames.SmallHeart)
+})
 basic.forever(function () {
-    music.setTempo(58)
-    music.setVolume(255)
     music.playTone(330, music.beat(BeatFraction.Quarter))
     music.playTone(392, music.beat(BeatFraction.Quarter))
     music.playTone(440, music.beat(BeatFraction.Quarter))
